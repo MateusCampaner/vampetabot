@@ -130,7 +130,7 @@ public class comandosBoti extends ListenerAdapter { // Classe de comandos do bot
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) { // Aqui que a magia acontece. Pra cada mensagem enviada no servidor, o bot ouve passivamente todos os conais e responde se algumas palavras chaves são respondidas
-        String[] palavroes = {"buceta", "cu", "merda", "anus", "bicha", "boiola", "bosta", "caralho", "caraio", "filho da puta", "foda", "fodasse", "penis", "rola"}; // Aqui fica todos os palavroes que o bot vai excluir se ele encontra em uma mensagem
+        String[] palavroes = {"buceta", "cu", "merda", "anus", "bicha", "boiola", "bosta", "caralho", "caraio", "filho da puta", "foda", "fodasse", "penis", "rola", "piroca", "fdp", "fudido"}; // Aqui fica todos os palavroes que o bot vai excluir se ele encontra em uma mensagem
         String[] message = event.getMessage().getContentRaw().split(" "); // ele divide as mensagens em espaços para procurar facilmente
         String mensage2 = event.getMessage().getContentRaw(); // Aqui ele procura a mensagem por completo
 
@@ -272,6 +272,12 @@ public class comandosBoti extends ListenerAdapter { // Classe de comandos do bot
         Matcher ola18 = ola17.matcher(mensage2);
         Pattern ola19 = Pattern.compile("^(?=.*\\bOla\\b)(>?).*$", Pattern.CASE_INSENSITIVE); // Esses regexs são de saudações do bot
         Matcher ola20 = ola19.matcher(mensage2);
+        Pattern ola21 = Pattern.compile("^(?=.*\\beae\\b)(>?).*$", Pattern.CASE_INSENSITIVE); // Esses regexs são de saudações do bot
+        Matcher ola22 = ola19.matcher(mensage2);
+        Pattern ola23 = Pattern.compile("^(?=.*\\bsalve\\b)(>?).*$", Pattern.CASE_INSENSITIVE); // Esses regexs são de saudações do bot
+        Matcher ola24 = ola19.matcher(mensage2);
+        Pattern ola25 = Pattern.compile("^(?=.*\\bopa\\b)(>?).*$", Pattern.CASE_INSENSITIVE); // Esses regexs são de saudações do bot
+        Matcher ola26 = ola19.matcher(mensage2);
         Pattern niver1 = Pattern.compile("^(?=.*\\banos\\b)(?=.*\\btem\\b)(>?).*$", Pattern.CASE_INSENSITIVE); // esse regex que faz o bot manda foto do vampeta
         Matcher niver2 = niver1.matcher(mensage2);
         Pattern niver3 = Pattern.compile("^(?=.*\\baniversário\\b)(?=.*\\bquando\\b)(>?).*$", Pattern.CASE_INSENSITIVE); // esse regex que faz o bot manda foto do vampeta
@@ -422,7 +428,7 @@ public class comandosBoti extends ListenerAdapter { // Classe de comandos do bot
 
 
         if (ola2.matches() || ola4.matches() || ola6.matches() || ola8.matches() || ola10.matches() || ola12.matches() || ola14.matches()
-                || ola16.matches() || ola18.matches() || ola20.matches() && !nope) { // Esse if manda mensagem de olá se der true
+                || ola16.matches() || ola18.matches() || ola20.matches() || ola22.matches() || ola24.matches() && !nope) { // Esse if manda mensagem de olá se der true
 
             int min = 1;
             int max = 20;
@@ -472,7 +478,7 @@ public class comandosBoti extends ListenerAdapter { // Classe de comandos do bot
                     event.getChannel().sendFiles(FileUpload.fromData(Paths.get("src/main/java/bot/iservice/commands/midias/vampeta com copa.png"))).queue();
                     break;
                 case 17: case 18: case 19: case 20:
-                    event.getChannel().sendFiles(FileUpload.fromData(Paths.get("src/main/java/bot/iservice/commands/midias/vampeta com copa.png"))).queue();
+                    event.getChannel().sendFiles(FileUpload.fromData(Paths.get("src/main/java/bot/iservice/commands/midias/vampetaSelecao.png"))).queue();
                     break;
                 case 21: case 22:
                     event.getChannel().sendFiles(FileUpload.fromData(Paths.get("src/main/java/bot/iservice/commands/midias/vampeta normal.png"))).queue();
@@ -484,7 +490,7 @@ public class comandosBoti extends ListenerAdapter { // Classe de comandos do bot
                     event.getChannel().sendFiles(FileUpload.fromData(Paths.get("src/main/java/bot/iservice/commands/midias/vampeta com copa.png"))).queue();
                     break;
                 case 28: case 29: case 30:
-                    event.getChannel().sendFiles(FileUpload.fromData(Paths.get("src/main/java/bot/iservice/commands/midias/vampetata.png"))).queue();
+                    event.getChannel().sendFiles(FileUpload.fromData(Paths.get("src/main/java/bot/iservice/commands/midias/vampetaTrofeu.png"))).queue();
                     break;
                 default:
                     System.out.println("Algo de errado");
@@ -515,6 +521,8 @@ public class comandosBoti extends ListenerAdapter { // Classe de comandos do bot
                     case 2:
                     case 3:
                     case 4:
+                        resposta = "Velozes e Furiosos";
+                        break;
                     case 5:
                     case 6:
                     case 7:
@@ -583,7 +591,7 @@ public class comandosBoti extends ListenerAdapter { // Classe de comandos do bot
                     resposta = "No melhor do Brasil";
                     break;
                 case 17: case 18: case 19: case 20:
-                    resposta = "Timao porr*";
+                    resposta = "Timao po";
                     break;
                 case 21: case 22:
                     resposta = "Palmeiras que não é";
@@ -746,14 +754,17 @@ public class comandosBoti extends ListenerAdapter { // Classe de comandos do bot
             String resposta = " ";
 
             switch (b) {
-                case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10:
+                case 1: case 2: case 3: case 4: case 5: case 6:
                     resposta = "Vampeta";
+                    break;
+                case 7: case 8: case 9: case 10:
+                    resposta = "Velho Vamp";
                     break;
                 case 11: case 12: case 13: case 14: case 15: case 16:
                     resposta = "Marcos André Batista Santos";
                     break;
                 case 17: case 18: case 19: case 20:
-                    resposta = "Vampeta";
+                    resposta = "Sou o grande Vampeta";
                     break;
                 case 21: case 22:
                     resposta = "Ta escrito ai";
@@ -856,8 +867,11 @@ public class comandosBoti extends ListenerAdapter { // Classe de comandos do bot
             String resposta = " ";
 
             switch (b) {
-                case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10:
+                case 1: case 2: case 3: case 4: case 5: case 6: case 7:
                     resposta = "Sou Comentarista";
+                    break;
+                case 8: case 9: case 10:
+                    resposta = "Joguei a copa de 2002 fi";
                     break;
                 case 11: case 12: case 13: case 14: case 15: case 16:
                     resposta = "Era jogador, hoje sou comentarista";
